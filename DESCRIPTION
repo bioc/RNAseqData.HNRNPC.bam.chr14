@@ -1,0 +1,16 @@
+Package: RNAseqData.HNRNPC.bam.chr14
+Title: Aligned reads from RNAseq experiment: Transcription profiling by high throughput sequencing of HNRNPC knockdown and control HeLa cells
+Description: The package contains 8 BAM files, 1 per sequencing run. Each
+	BAM file was obtained by (1) aligning the reads (paired-end) to the
+	full hg19 genome with TopHat2, and then (2) subsetting to keep only
+	alignments on chr14. See accession number E-MTAB-1147 in the
+	ArrayExpress database for details about the experiment, including links
+	to the published study (by Zarnack et al., 2012) and to the
+	FASTQ files.
+URL: http://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-1147/
+Version: 0.1.3
+Author: H. Pages
+Maintainer: H. Pages <hpages@fhcrc.org>
+Suggests: Rsamtools, BiocInstaller
+biocViews: ExperimentData, RNAseqData, Homo_sapiens
+License: LGPL
