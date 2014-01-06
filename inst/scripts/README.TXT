@@ -54,7 +54,7 @@ In either case, make sure SCRIPTS_DIR is set correctly by doing:
 
   cat $SCRIPTS_DIR/README.TXT
 
-It should should display the content of this README.TXT file.
+It should display the content of this README.TXT file.
 
 2. Create the "main working directory"
 --------------------------------------

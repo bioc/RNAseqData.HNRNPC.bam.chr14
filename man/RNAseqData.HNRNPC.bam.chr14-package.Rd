@@ -79,8 +79,8 @@ RNAseqData.HNRNPC.bam.chr14_BAMFILES
     \item \url{http://samtools.sourceforge.net/SAM1.pdf} for the SAM Format
           Specification.
 
-    \item The \code{\link[GenomicRanges]{readGAlignmentPairs}} function
-          in the \pkg{GenomicRanges} package for more information about
+    \item The \code{\link[GenomicAlignments]{readGAlignmentPairs}} function
+          in the \pkg{GenomicAlignments} package for more information about
           how to read paired-end reads from a BAM file into Bioconductor.
 
     \item The \code{\link[Rsamtools]{ScanBamParam}} function in the
@@ -93,14 +93,10 @@ RNAseqData.HNRNPC.bam.chr14_BAMFILES
 RNAseqData.HNRNPC.bam.chr14_RUNNAMES
 RNAseqData.HNRNPC.bam.chr14_BAMFILES
 
-if (require(Rsamtools) && require(BiocInstaller)) {
+if (require(GenomicAlignments)) {
     bamfiles <- RNAseqData.HNRNPC.bam.chr14_BAMFILES
     param <- ScanBamParam(tag="NM")
-    if (BiocInstaller:::BIOC_VERSION >= 2.13)
-      func <- readGAlignmentPairs
-    else
-      func <- readGappedAlignmentPairs
-    galp <- func(bamfiles[1L], use.names=TRUE, param=param)
+    galp <- readGAlignmentPairs(bamfiles[1L], use.names=TRUE, param=param)
     galp
 
     first(galp)  # 1st segment in each pair
