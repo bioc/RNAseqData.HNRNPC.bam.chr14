@@ -3,9 +3,6 @@
 
 set -e # Exit immediately if a simple command exits with a non-zero status.
 
-# 3. Create the tophat2_out folder:
-#      mkdir tophat2_out
-
 TOPHAT2_CMD="~/tophat-2.0.8b.Linux_x86_64/tophat2 --mate-inner-dist 150 --solexa-quals --max-multihits 5 --no-discordant --no-mixed --coverage-search --microexon-search --library-type fr-unstranded"
 BOWTIE_INDEX="~/bowtie2-2.1.0/indexes/hg19"
 INPUT_FILE_DIR="fastq"
@@ -122,15 +119,23 @@ elif [ "$workflow" == "4batchesof2" ]; then
                              ($tophat2_cmd8 >>$cmd8_logfile 2>&1)) &"
   /bin/bash -c "$tophat2_cmd78_sequencial"
 elif [ "$workflow" == "8batchesof1" ]; then
+  # Aligns the 8 runs in parallel.
   # Very likely to blow up your server. Use at your own risk!
-  echo "start commands for aligning Run 1"
+  echo "start command for aligning Run 1"
   /bin/bash -c "$tophat2_cmd1 >>$cmd1_logfile 2>&1 &"
+  echo "start command for aligning Run 2"
   /bin/bash -c "$tophat2_cmd2 >>$cmd2_logfile 2>&1 &"
+  echo "start command for aligning Run 3"
   /bin/bash -c "$tophat2_cmd3 >>$cmd3_logfile 2>&1 &"
+  echo "start command for aligning Run 4"
   /bin/bash -c "$tophat2_cmd4 >>$cmd4_logfile 2>&1 &"
+  echo "start command for aligning Run 5"
   /bin/bash -c "$tophat2_cmd5 >>$cmd5_logfile 2>&1 &"
+  echo "start command for aligning Run 6"
   /bin/bash -c "$tophat2_cmd6 >>$cmd6_logfile 2>&1 &"
+  echo "start command for aligning Run 7"
   /bin/bash -c "$tophat2_cmd7 >>$cmd7_logfile 2>&1 &"
+  echo "start command for aligning Run 8"
   /bin/bash -c "$tophat2_cmd8 >>$cmd8_logfile 2>&1 &"
 fi
 

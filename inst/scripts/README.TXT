@@ -63,7 +63,7 @@ For example with:
 
   mkdir ~/E-MTAB-1147
 
-Also create the 3 following subdirs:
+Also create the 4 following subdirs:
 
   cd ~/E-MTAB-1147
   mkdir fastq tmp_downloads tophat2_out bam_chr14
@@ -121,7 +121,7 @@ This took about 2h on rhino02:
   cd ~/E-MTAB-1147/tmp_downloads
   wget http://hgdownload.soe.ucsc.edu/goldenPath/hg19/bigZips/chromFa.tar.gz
   tar zxvf chromFa.tar.gz
-  hg19_seqnames=`cat $SCRIPTS_DIR/seqnames.txt`
+  hg19_seqnames=`cat $SCRIPTS_DIR/hg19_seqnames.txt`
   reference_in=""
   for seqname in $hg19_seqnames; do
       file=${seqname}.fa
@@ -142,7 +142,7 @@ Move them to the Bowtie indexes subdirectory with:
 
 Test that the index is properly installed:
 
-  export BOWTIE2_INDEXES="~/bowtie2-2.1.0/indexes"
+  export BOWTIE2_INDEXES=~/bowtie2-2.1.0/indexes
   bowtie2 -c hg19 GTTTTAGTAGAGACAAGGTCTCACTGTGCTGCCCTGGTGGGTCTCAAATTCCTGA
 
 6. Align the reads
