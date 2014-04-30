@@ -102,18 +102,19 @@ if (require(GenomicAlignments)) {
     first(galp)  # 1st segment in each pair
     last(galp)  # 2nd segment in each pair
 
-    ## The alignments contain insertions, deletions, and gaps (I, D,
+    ## The alignments contain insertions, deletions, and junctions (I, D,
     ## and N CIGAR operations, respectively):
     colSums(cigarOpTable(cigar(first(galp))))
     colSums(cigarOpTable(cigar(last(galp))))
 
-    ## ngap() returns the nb of gaps for each alignment:
-    table(ngap(first(galp)))
-    table(ngap(last(galp)))
-    table(ngap(first(galp)) + ngap(last(galp)))  # up to 5 gaps per pair!
+    ## njunc() returns the nb of junctions for each alignment:
+    table(njunc(first(galp)))
+    table(njunc(last(galp)))
+    table(njunc(first(galp)) + njunc(last(galp)))  # up to 5 junctions
+                                                   # per pair!
 
     ## The NM tag gives the edit distance of each alignment to the
-    ## reference (ignoring the gaps):
+    ## reference (ignoring the junction gaps):
     table(mcols(first(galp))$NM)
     table(mcols(last(galp))$NM)
     table(mcols(first(galp))$NM + mcols(last(galp))$NM)
