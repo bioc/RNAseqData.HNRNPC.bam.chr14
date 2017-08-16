@@ -1,0 +1,37 @@
+
+[2013-05-16 12:43:55] Beginning TopHat run (v2.0.8b)
+-----------------------------------------------
+[2013-05-16 12:43:55] Checking for Bowtie
+		  Bowtie version:	 2.1.0.0
+[2013-05-16 12:43:55] Checking for Samtools
+		Samtools version:	 0.1.18.0
+[2013-05-16 12:43:55] Checking for Bowtie index files
+[2013-05-16 12:43:55] Checking for reference FASTA file
+[2013-05-16 12:43:55] Generating SAM header for /home/hpages/bowtie2-2.1.0/indexes/hg19
+	format:		 fastq
+	quality scale:	 solexa33 (reads generated with GA pipeline version < 1.3)
+[2013-05-16 12:43:57] Preparing reads
+	 left reads: min. length=72, max. length=72, 32422564 kept reads (19975 discarded)
+	right reads: min. length=72, max. length=72, 32388819 kept reads (53720 discarded)
+[2013-05-16 12:56:28] Mapping left_kept_reads to genome hg19 with Bowtie2 
+[2013-05-16 13:19:01] Mapping left_kept_reads_seg1 to genome hg19 with Bowtie2 (1/3)
+[2013-05-16 13:24:23] Mapping left_kept_reads_seg2 to genome hg19 with Bowtie2 (2/3)
+[2013-05-16 13:29:59] Mapping left_kept_reads_seg3 to genome hg19 with Bowtie2 (3/3)
+[2013-05-16 13:35:17] Mapping right_kept_reads to genome hg19 with Bowtie2 
+[2013-05-16 13:58:26] Mapping right_kept_reads_seg1 to genome hg19 with Bowtie2 (1/3)
+[2013-05-16 14:03:49] Mapping right_kept_reads_seg2 to genome hg19 with Bowtie2 (2/3)
+[2013-05-16 14:09:17] Mapping right_kept_reads_seg3 to genome hg19 with Bowtie2 (3/3)
+[2013-05-16 14:13:58] Searching for junctions via segment mapping
+[2013-05-16 22:36:30] Retrieving sequences for splices
+[2013-05-16 22:38:46] Indexing splices
+[2013-05-16 22:49:44] Mapping left_kept_reads_seg1 to genome segment_juncs with Bowtie2 (1/3)
+[2013-05-16 22:55:33] Mapping left_kept_reads_seg2 to genome segment_juncs with Bowtie2 (2/3)
+[2013-05-16 23:01:17] Mapping left_kept_reads_seg3 to genome segment_juncs with Bowtie2 (3/3)
+[2013-05-16 23:07:31] Joining segment hits
+[2013-05-16 23:12:08] Mapping right_kept_reads_seg1 to genome segment_juncs with Bowtie2 (1/3)
+[2013-05-16 23:19:29] Mapping right_kept_reads_seg2 to genome segment_juncs with Bowtie2 (2/3)
+[2013-05-16 23:25:57] Mapping right_kept_reads_seg3 to genome segment_juncs with Bowtie2 (3/3)
+[2013-05-16 23:31:48] Joining segment hits
+[2013-05-16 23:36:54] Reporting output tracks
+-----------------------------------------------
+[2013-05-17 00:07:24] Run complete: 11:23:29 elapsed
