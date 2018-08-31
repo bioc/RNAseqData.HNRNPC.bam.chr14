@@ -12,6 +12,6 @@ Version: 0.19.0
 Encoding: UTF-8
 Author: Hervé Pagès
 Maintainer: Hervé Pagès <hpages@fredhutch.org>
-Suggests: GenomicAlignments, BiocInstaller
+Suggests: GenomicAlignments, BiocManager
 biocViews: ExperimentData, Genome, Homo_sapiens_Data, SequencingData, GEO, NCI, RNASeqData, ArrayExpress
 License: LGPL
