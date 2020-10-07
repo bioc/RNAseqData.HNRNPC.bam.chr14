@@ -11,7 +11,7 @@ URL: http://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-1147/
 Version: 0.27.0
 Encoding: UTF-8
 Author: Hervé Pagès
-Maintainer: Hervé Pagès <hpages@fredhutch.org>
+Maintainer: Hervé Pagès <hpages.on.github@gmail.com>
 Suggests: GenomicAlignments, BiocManager
 biocViews: ExperimentData, Genome, Homo_sapiens_Data, SequencingData, GEO, NCI, RNASeqData, ArrayExpress
 License: LGPL
