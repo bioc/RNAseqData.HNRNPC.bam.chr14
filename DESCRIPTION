@@ -8,10 +8,10 @@ Description: The package contains 8 BAM files, 1 per sequencing run. Each
 	to the published study (by Zarnack et al., 2012) and to the
 	FASTQ files.
 URL: http://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-1147/
-Version: 0.51.0
+Version: 0.51.1
 Encoding: UTF-8
 Author: Hervé Pagès
 Maintainer: Hervé Pagès <hpages.on.github@gmail.com>
-Suggests: GenomicAlignments, BiocManager
+Suggests: cigarillo, GenomicAlignments, BiocManager
 biocViews: ExperimentData, Genome, Homo_sapiens_Data, SequencingData, GEO, NCI, RNASeqData, ArrayExpress
 License: LGPL

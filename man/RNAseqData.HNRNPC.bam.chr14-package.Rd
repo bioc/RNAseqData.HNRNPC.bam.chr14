@@ -93,32 +93,32 @@ RNAseqData.HNRNPC.bam.chr14_BAMFILES
 RNAseqData.HNRNPC.bam.chr14_RUNNAMES
 RNAseqData.HNRNPC.bam.chr14_BAMFILES
 
-if (require(GenomicAlignments)) {
-    bamfiles <- RNAseqData.HNRNPC.bam.chr14_BAMFILES
-    param <- ScanBamParam(tag="NM")
-    galp <- readGAlignmentPairs(bamfiles[1L], use.names=TRUE, param=param)
-    galp
+library(GenomicAlignments)
+bamfiles <- RNAseqData.HNRNPC.bam.chr14_BAMFILES
+param <- ScanBamParam(tag="NM")
+galp <- readGAlignmentPairs(bamfiles[1L], use.names=TRUE, param=param)
+galp
 
-    first(galp)  # 1st segment in each pair
-    last(galp)  # 2nd segment in each pair
+first(galp)  # 1st segment in each pair
+last(galp)  # 2nd segment in each pair
 
-    ## The alignments contain insertions, deletions, and junctions (I, D,
-    ## and N CIGAR operations, respectively):
-    colSums(cigarOpTable(cigar(first(galp))))
-    colSums(cigarOpTable(cigar(last(galp))))
+## The alignments contain insertions, deletions, and junctions (I, D,
+## and N CIGAR operations, respectively):
+library(cigarillo)  # for tabulate_cigar_ops()
+colSums(tabulate_cigar_ops(cigar(first(galp))))
+colSums(tabulate_cigar_ops(cigar(last(galp))))
 
-    ## njunc() returns the nb of junctions for each alignment:
-    table(njunc(first(galp)))
-    table(njunc(last(galp)))
-    table(njunc(first(galp)) + njunc(last(galp)))  # up to 5 junctions
-                                                   # per pair!
+## njunc() returns the nb of junctions for each alignment:
+table(njunc(first(galp)))
+table(njunc(last(galp)))
+table(njunc(first(galp)) + njunc(last(galp)))  # up to 5 junctions
+                                               # per pair!
 
-    ## The NM tag gives the edit distance of each alignment to the
-    ## reference (ignoring the junction gaps):
-    table(mcols(first(galp))$NM)
-    table(mcols(last(galp))$NM)
-    table(mcols(first(galp))$NM + mcols(last(galp))$NM)
-}
+## The NM tag gives the edit distance of each alignment to the
+## reference (ignoring the junction gaps):
+table(mcols(first(galp))$NM)
+table(mcols(last(galp))$NM)
+table(mcols(first(galp))$NM + mcols(last(galp))$NM)
 
 ## See README.TXT in scripts/ folder:
 README_file <- system.file("scripts", "README.TXT",
